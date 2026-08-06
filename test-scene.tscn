@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dp0hjid4egoiw"]
+
+[ext_resource type="Texture2D" uid="uid://dfdjlifcwodkq" path="res://img/pexels-kate-mahoney-2813472-38235616.jpg" id="1_0411k"]
+[ext_resource type="Script" uid="uid://bae7px3thl4tl" path="res://test_scene.gd" id="1_wn8ut"]
+
+[node name="Node2D" type="Node2D" unique_id=385406305]
+
+[node name="TimerCountdown" type="CanvasLayer" parent="." unique_id=427817989]
+layer = 20
+script = ExtResource("1_wn8ut")
+
+[node name="Timer" type="Timer" parent="TimerCountdown" unique_id=2088161283]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="TimerCountdown" unique_id=294299652]
+offset_left = 937.0
+offset_top = 38.0
+offset_right = 1134.0
+offset_bottom = 65.0
+max_value = 120.0
+step = 1.0
+fill_mode = 1
+
+[node name="Label" type="Label" parent="TimerCountdown" unique_id=84105851]
+offset_left = 973.0
+offset_top = 13.0
+offset_right = 1096.0
+offset_bottom = 36.0
+text = "Encrypting files:"
+
+[node name="DesktopBG" type="CanvasLayer" parent="." unique_id=167185010]
+
+[node name="TextureRect" type="TextureRect" parent="DesktopBG" unique_id=1477418025]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 1169.0
+offset_bottom = 656.0
+texture = ExtResource("1_0411k")
+expand_mode = 2
+
+[node name="Windows" type="CanvasLayer" parent="." unique_id=1120459157]
+layer = 2
+
+[node name="MainBrowser" type="Window" parent="Windows" unique_id=1954269628]
+oversampling_override = 1.0
+title = "Web Browser"
+initial_position = 1
+size = Vector2i(500, 500)
