@@ -43,8 +43,22 @@ expand_mode = 2
 [node name="Windows" type="CanvasLayer" parent="." unique_id=1120459157]
 layer = 2
 
-[node name="MainBrowser" type="Window" parent="Windows" unique_id=1954269628]
+[node name="Window" type="Window" parent="Windows" unique_id=76469969]
 oversampling_override = 1.0
 title = "Web Browser"
 initial_position = 1
 size = Vector2i(500, 500)
+
+[node name="ColorRect" type="ColorRect" parent="Windows/Window" unique_id=1237613567]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Windows/Window" unique_id=997286881]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 35.0
+grow_horizontal = 2
+text = "searchme.com"
