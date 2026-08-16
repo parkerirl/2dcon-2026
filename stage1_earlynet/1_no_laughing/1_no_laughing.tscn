@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://b778acgd6o1cj"]
+
+[ext_resource type="Texture2D" uid="uid://ye5u4c52wxy1" path="res://stage1_earlynet/1_no_laughing/counter.png" id="1_mg1vx"]
+[ext_resource type="Texture2D" uid="uid://dcrgk413gonnd" path="res://stage1_earlynet/1_no_laughing/computer_1.png" id="2_am1al"]
+[ext_resource type="Texture2D" uid="uid://cut2ov5e377br" path="res://stage1_earlynet/1_no_laughing/computer_2.png" id="3_ck5ue"]
+[ext_resource type="Texture2D" uid="uid://dgo6jcjwusvgo" path="res://stage1_earlynet/1_no_laughing/guy_1.png" id="4_ck5ue"]
+[ext_resource type="Texture2D" uid="uid://dfvyymuvy2q7q" path="res://stage1_earlynet/1_no_laughing/guy_2_1.png" id="5_m8o58"]
+[ext_resource type="Texture2D" uid="uid://v2cqlwsboytv" path="res://stage1_earlynet/1_no_laughing/guy_2_2.png" id="6_8xp3h"]
+[ext_resource type="Texture2D" uid="uid://bq4ediajhnplw" path="res://stage1_earlynet/1_no_laughing/guy_3_1.png" id="7_c1d6k"]
+[ext_resource type="Texture2D" uid="uid://dwsvso80obvag" path="res://stage1_earlynet/1_no_laughing/guy_3_2.png" id="8_ylrad"]
+[ext_resource type="Texture2D" uid="uid://gurcysuhi86v" path="res://stage1_earlynet/1_no_laughing/guy_fail.png" id="9_wly2g"]
+[ext_resource type="Texture2D" uid="uid://ckgn60fxbvlxg" path="res://stage1_earlynet/1_no_laughing/guy_fail_2.png" id="10_1c6ei"]
+
+[sub_resource type="Gradient" id="Gradient_vptmf"]
+offsets = PackedFloat32Array(0.06626506, 0.3554217, 0.57831323)
+colors = PackedColorArray(0.3553134, 0.3553136, 0.35531357, 1, 0.7313806, 0.73138064, 0.7313807, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dcgyd"]
+gradient = SubResource("Gradient_vptmf")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ogjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_am1al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ck5ue")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcgyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ck5ue")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m8o58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8xp3h")
+}],
+"loop": 1,
+"name": &"laugh_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_c1d6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ylrad")
+}],
+"loop": 1,
+"name": &"laugh_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wly2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1c6ei")
+}],
+"loop": 1,
+"name": &"laugh_3",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D" unique_id=671729599]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=787029396]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=44539512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="CanvasLayer/Control" unique_id=1788619223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_dcgyd")
+
+[node name="counter" type="Sprite2D" parent="CanvasLayer/Control" unique_id=1943698683]
+texture = ExtResource("1_mg1vx")
+centered = false
+
+[node name="computer" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=845868707]
+sprite_frames = SubResource("SpriteFrames_2ogjf")
+autoplay = "default"
+frame_progress = 0.66587615
+centered = false
+
+[node name="guy" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=424976268]
+sprite_frames = SubResource("SpriteFrames_dcgyd")
+autoplay = "default"
+centered = false

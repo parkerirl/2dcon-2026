@@ -11,14 +11,24 @@ config_version=5
 [application]
 
 config/name="2dcon-2026"
-run/main_scene="uid://dp0hjid4egoiw"
+run/main_scene="uid://b778acgd6o1cj"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="2dcon-2026"
+
+[gui]
+
+theme/custom_font="uid://dsye5xjtqt52p"
 
 [physics]
 
