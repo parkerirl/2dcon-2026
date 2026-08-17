@@ -1152,9 +1152,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main" type="Node2D" unique_id=671729599 node_paths=PackedStringArray("videos")]
+[node name="Main" type="Node2D" unique_id=671729599 node_paths=PackedStringArray("videos", "guy")]
 script = ExtResource("1_gn2qr")
 videos = [NodePath("CanvasLayer/Control/cat_video"), NodePath("CanvasLayer/Control/trololo_video"), NodePath("CanvasLayer/Control/stormtrooper_video"), NodePath("CanvasLayer/Control/awesomeface_video")]
+guy = NodePath("CanvasLayer/Control/guy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=787029396]
 follow_viewport_enabled = true
@@ -1233,8 +1234,8 @@ metadata/_edit_lock_ = true
 
 [node name="guy" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=424976268]
 sprite_frames = SubResource("SpriteFrames_dcgyd")
+animation = &"laugh_1"
 autoplay = "default"
-frame_progress = 0.1962695
 centered = false
 metadata/_edit_lock_ = true
 
