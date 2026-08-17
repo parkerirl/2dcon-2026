@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cuwya1yh2lhry"]
+
+[ext_resource type="AudioStream" uid="uid://0jufluhvn3ir" path="res://audio/level1/early_transition.ogg" id="1_ap5g2"]
+
+[node name="AudioManager" type="Node" unique_id=518492664]
+
+[node name="earlyTransition" type="AudioStreamPlayer2D" parent="." unique_id=1116312522]
+stream = ExtResource("1_ap5g2")
+autoplay = true

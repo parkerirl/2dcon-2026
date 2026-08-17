@@ -11,14 +11,21 @@ config_version=5
 [application]
 
 config/name="2dcon-2026"
-run/main_scene="uid://b778acgd6o1cj"
+run/main_scene="uid://k10oexq1d0kp"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://dw735v5en7ant"
+AudioManager="*uid://cuwya1yh2lhry"
+UI="*uid://bqqv7qc84fvhi"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

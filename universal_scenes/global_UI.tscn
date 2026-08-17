@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bqqv7qc84fvhi"]
+
+[ext_resource type="Script" uid="uid://b3y1pvnrgkgk2" path="res://universal_scenes/instructions.gd" id="1_ah3m2"]
+
+[node name="UI" type="CanvasLayer" unique_id=822918922]
+
+[node name="instructions" type="RichTextLabel" parent="." unique_id=616971023]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+mouse_filter = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 135
+bbcode_enabled = true
+text = "[shake rate=12.0 level=18.0 connected=0]Instructions here![/shake]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ah3m2")
