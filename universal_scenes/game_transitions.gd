@@ -20,7 +20,7 @@ func MicrogameTransition() -> void:
 	print (gameInstructions)
 	temp.queue_free()
 
-	await get_tree().create_timer(2.3).timeout
+	await get_tree().create_timer(2.0).timeout
 	get_tree().change_scene_to_packed(nextGame)
 	
 	#get gamewon boolean, if won, play win state, then play normal transition
