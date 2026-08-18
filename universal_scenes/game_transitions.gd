@@ -22,17 +22,13 @@ func PrepareMicrogame() -> void:
 	instructionText.append_text("[shake rate=12.0 level=18.0 connected=0]" + gameInstructions + "[/shake]")
 	print (gameInstructions)
 
-#Controls the transition to each microgame
 func MicrogameTransition() -> void:
-
-	#await get_tree().create_timer(2.0).timeout
 	temp.queue_free()
 	get_tree().change_scene_to_packed(nextGame)
 	
 	#get gamewon boolean, if won, play win state, then play normal transition
 	#if lost, remove 1 life, play lose state, then play normal transition
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 		
 	if Global.gameWon == 0:
@@ -47,8 +43,8 @@ func _ready() -> void:
 	Engine.time_scale = Global.gameTimeScaleFactor
 	gameAudio.pitch_scale = Global.gameTimeScaleFactor
 	gameAudio.play()
-	frameDuration = 60 / Global.bpm
 	
+	frameDuration = 60 / Global.bpm
 	spritesToTween = $animatedSprites.get_children()
 	
 	PrepareMicrogame()
@@ -56,15 +52,11 @@ func _ready() -> void:
 	#Set sprite fps to length of a single beat of the current bpm
 	for sprite in spritesToTween:
 		sprite.sprite_frames.set_animation_speed("default", 1.0 / frameDuration)
-	
-	#MicrogameTransition()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	
 	var time = gameAudio.get_playback_position() + AudioServer.get_time_to_next_mix() - AudioServer.get_output_latency()
 	var currentBeat = floori(time * (Global.bpm / 60.0))
-	
 	
 	#ANIMATION EXECUTION--------------------------
 	if currentBeat != lastBeat:

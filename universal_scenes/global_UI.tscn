@@ -1,6 +1,526 @@
 [gd_scene format=3 uid="uid://bqqv7qc84fvhi"]
 
 [ext_resource type="Script" uid="uid://b3y1pvnrgkgk2" path="res://universal_scenes/instructions.gd" id="1_ah3m2"]
+[ext_resource type="Texture2D" uid="uid://cix8xsq53oky6" path="res://universal_scenes/timer_assets/shadow/shadow.png" id="2_b6dwy"]
+[ext_resource type="Texture2D" uid="uid://dwa2pqrwl2d2c" path="res://universal_scenes/timer_assets/shadow/shadow2.png" id="3_vvgd1"]
+[ext_resource type="Texture2D" uid="uid://cye0m58d4x38s" path="res://universal_scenes/timer_assets/shadow/shadow3.png" id="4_shg0q"]
+[ext_resource type="Texture2D" uid="uid://cpmxlqd14gurb" path="res://universal_scenes/timer_assets/bar_glow.png" id="4_yljmi"]
+[ext_resource type="Texture2D" uid="uid://bvmgof0nko15h" path="res://universal_scenes/timer_assets/shadow/shadow4.png" id="5_84oyt"]
+[ext_resource type="Texture2D" uid="uid://b4t2i4b66fr0v" path="res://universal_scenes/timer_assets/shadow/shadow5.png" id="6_uge3c"]
+[ext_resource type="Texture2D" uid="uid://c3cwchlxr1qrw" path="res://universal_scenes/timer_assets/folder.png" id="6_yljmi"]
+[ext_resource type="Texture2D" uid="uid://bp28siuk75eoj" path="res://universal_scenes/timer_assets/shadow/shadow6.png" id="7_6164f"]
+[ext_resource type="Texture2D" uid="uid://cybksoc11oda0" path="res://universal_scenes/timer_assets/virus_1.png" id="7_ccved"]
+[ext_resource type="Texture2D" uid="uid://dyn0ddu3wlpts" path="res://universal_scenes/timer_assets/foldercorrupt_1.png" id="7_hbamb"]
+[ext_resource type="Texture2D" uid="uid://gvgypgnkxq8p" path="res://universal_scenes/timer_assets/foldercorrupt_2.png" id="8_2vukm"]
+[ext_resource type="Texture2D" uid="uid://c72skqllo7xgd" path="res://universal_scenes/timer_assets/shadow/shadow7.png" id="8_b877u"]
+[ext_resource type="Texture2D" uid="uid://dr0t0yprjdv06" path="res://universal_scenes/timer_assets/virus_2.png" id="8_hbamb"]
+[ext_resource type="Texture2D" uid="uid://ddmqx0gktapbu" path="res://universal_scenes/timer_assets/virus_3.png" id="9_2vukm"]
+[ext_resource type="Texture2D" uid="uid://sx6b3ne8pn3g" path="res://universal_scenes/timer_assets/bar_bg/bar_bg.png" id="9_b877u"]
+[ext_resource type="Texture2D" uid="uid://dw3rp8yd8nqg5" path="res://universal_scenes/timer_assets/shadow/shadow_alt.png" id="9_pvn71"]
+[ext_resource type="Texture2D" uid="uid://cfg20diigwybt" path="res://universal_scenes/timer_assets/bar_bg/bar_bg2.png" id="10_5iloy"]
+[ext_resource type="Texture2D" uid="uid://cxkf1lvqd4o78" path="res://universal_scenes/timer_assets/bar_bg/bar_bg3.png" id="11_lmewc"]
+[ext_resource type="Texture2D" uid="uid://yi4yxd2ni3ol" path="res://universal_scenes/timer_assets/bar_bg/bar_bg4.png" id="12_ocpya"]
+[ext_resource type="Texture2D" uid="uid://d4mffdvrj4s0y" path="res://universal_scenes/timer_assets/bar_bg/bar_bg5.png" id="13_lghmf"]
+[ext_resource type="Texture2D" uid="uid://e084wt1ys4th" path="res://universal_scenes/timer_assets/bar_bg/bar_bg6.png" id="14_gpade"]
+[ext_resource type="Texture2D" uid="uid://cuacsey6jeq2l" path="res://universal_scenes/timer_assets/bar_bg/bar_bg7.png" id="15_1hfx0"]
+[ext_resource type="Texture2D" uid="uid://bs4v4ooeb1eb8" path="res://universal_scenes/timer_assets/bar_outline/bar_outline.png" id="17_1hfx0"]
+[ext_resource type="Texture2D" uid="uid://bnches4wsb45p" path="res://universal_scenes/timer_assets/bar_bg/bar_bg_alt.png" id="17_7vfb3"]
+[ext_resource type="Texture2D" uid="uid://vrrc75hx81v" path="res://universal_scenes/timer_assets/bar_outline/bar_outline2.png" id="18_vuvkc"]
+[ext_resource type="Texture2D" uid="uid://br5qihao04e61" path="res://universal_scenes/timer_assets/bar_outline/bar_outline3.png" id="19_omllb"]
+[ext_resource type="Texture2D" uid="uid://crdkfe3yknd38" path="res://universal_scenes/timer_assets/bar_outline/bar_outline4.png" id="20_pvn71"]
+[ext_resource type="Texture2D" uid="uid://j67jvw0m1axu" path="res://universal_scenes/timer_assets/bar_outline/bar_outline5.png" id="21_7vfb3"]
+[ext_resource type="Texture2D" uid="uid://0dh5ogqfon3b" path="res://universal_scenes/timer_assets/bar_outline/bar_outline6.png" id="22_rryok"]
+[ext_resource type="Texture2D" uid="uid://bbbs5p67drva7" path="res://universal_scenes/timer_assets/bar_outline/bar_outline7.png" id="23_8qd38"]
+[ext_resource type="Texture2D" uid="uid://bp1gtr46gcv2y" path="res://universal_scenes/timer_assets/bar_outline/bar_outline_alt.png" id="26_rryok"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyiby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b6dwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vvgd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_shg0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_84oyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uge3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6164f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b877u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pvn71")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j88wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_b877u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5iloy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lmewc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ocpya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lghmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gpade")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1hfx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7vfb3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cga16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_1hfx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vuvkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_omllb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pvn71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7vfb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rryok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8qd38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rryok")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcgyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yljmi")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pf74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hbamb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2vukm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ogjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hbamb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ccved")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2vukm")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_ccved"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("timer/corner_anchor/Bar/BarBg/BarGlow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-468, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("timer/corner_anchor/virus:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("timer/corner_anchor/virus:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1401, 932)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("timer/corner_anchor/virus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("timer/corner_anchor/Bar/BarBg/BarGlow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("timer/corner_anchor/Shadow:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("timer/corner_anchor/Bar/BarOutline:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("timer/corner_anchor/Bar/BarBg:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("timer/corner_anchor/Bar/BarBg:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("timer/corner_anchor/Bar/BarOutline:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("timer/corner_anchor/Shadow:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("timer/corner_anchor/Folder:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("timer/corner_anchor/folder_corrupted:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("timer/corner_anchor/folder_corrupted:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_80uw8"]
+resource_name = "timer_animation"
+length = 9.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("timer/corner_anchor/Bar/BarBg/BarGlow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-600, 0), Vector2(655, 0), Vector2(-600, 0), Vector2(655, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("timer/corner_anchor/virus:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5, 5.25, 5.5, 5.75, 6, 6.25, 6.5, 6.75, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("timer/corner_anchor/virus:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1372, 932), Vector2(1238, 932), Vector2(1133, 932), Vector2(1032, 932), Vector2(929, 932), Vector2(825, 932), Vector2(754, 932), Vector2(678, 932)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("timer/corner_anchor/virus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("timer/corner_anchor/Bar/BarBg/BarGlow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3, 4, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("timer/corner_anchor/Shadow:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 7, 6]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("timer/corner_anchor/Bar/BarOutline:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 7, 6]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("timer/corner_anchor/Bar/BarBg:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 7, 6]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("timer/corner_anchor/Bar/BarBg:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("timer/corner_anchor/Bar/BarOutline:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("timer/corner_anchor/Shadow:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("timer/corner_anchor/Folder:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("timer/corner_anchor/folder_corrupted:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("timer/corner_anchor/folder_corrupted:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ccved"]
+_data = {
+&"RESET": SubResource("Animation_ccved"),
+&"timer_animation": SubResource("Animation_80uw8")
+}
 
 [node name="UI" type="CanvasLayer" unique_id=822918922]
 
@@ -20,6 +540,7 @@ text = "[shake rate=12.0 level=18.0 connected=0]Instructions here![/shake]"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_ah3m2")
+metadata/_edit_lock_ = true
 
 [node name="timer" type="Control" parent="." unique_id=2103548687]
 layout_mode = 3
@@ -28,4 +549,58 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="corner_anchor" type="Control" parent="timer" unique_id=1674536831]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shadow" type="AnimatedSprite2D" parent="timer/corner_anchor" unique_id=491360125]
+visible = false
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_wyiby")
+metadata/_edit_lock_ = true
+
+[node name="Bar" type="Node" parent="timer/corner_anchor" unique_id=557339170]
+
+[node name="BarBg" type="AnimatedSprite2D" parent="timer/corner_anchor/Bar" unique_id=46937415]
+visible = false
+clip_children = 2
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_j88wp")
+metadata/_edit_lock_ = true
+
+[node name="BarGlow" type="Sprite2D" parent="timer/corner_anchor/Bar/BarBg" unique_id=532170711]
+visible = false
+position = Vector2(-468, 0)
+texture = ExtResource("4_yljmi")
+
+[node name="BarOutline" type="AnimatedSprite2D" parent="timer/corner_anchor/Bar" unique_id=54213842]
+visible = false
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_cga16")
+metadata/_edit_lock_ = true
+
+[node name="Folder" type="AnimatedSprite2D" parent="timer/corner_anchor" unique_id=1612917113]
+z_index = 1
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_dcgyd")
+
+[node name="folder_corrupted" type="AnimatedSprite2D" parent="timer/corner_anchor" unique_id=400639789]
+position = Vector2(535, 946.00006)
+scale = Vector2(0.41605836, 0.4160584)
+sprite_frames = SubResource("SpriteFrames_3pf74")
+autoplay = "default"
+
+[node name="virus" type="AnimatedSprite2D" parent="timer/corner_anchor" unique_id=2114471334]
+z_index = 2
+position = Vector2(1401, 932)
+sprite_frames = SubResource("SpriteFrames_2ogjf")
+frame = 1
+
+[node name="timer_animation" type="AnimationPlayer" parent="." unique_id=1169583010]
+libraries/ = SubResource("AnimationLibrary_ccved")
+autoplay = &"timer_animation"
