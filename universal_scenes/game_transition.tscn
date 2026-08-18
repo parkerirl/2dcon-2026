@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ps37wbx8wi6w" path="res://universal_scenes/transition_assets/laptop.png" id="1_3d3ve"]
 [ext_resource type="Script" uid="uid://b2b860gefayx2" path="res://universal_scenes/game_transitions.gd" id="1_5duto"]
 [ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/1_no_laughing/1_no_laughing.tscn" id="2_tlq4w"]
-[ext_resource type="PackedScene" uid="uid://boaew6l3t4pjc" path="res://stage1/2_spam/2_spam.tscn" id="3_curyv"]
 [ext_resource type="Texture2D" uid="uid://bkoxxqsw3byhw" path="res://universal_scenes/transition_assets/handRight_1.png" id="5_curyv"]
 [ext_resource type="Texture2D" uid="uid://cna6fuijdrd17" path="res://universal_scenes/transition_assets/handRight_2.png" id="6_kikrh"]
 [ext_resource type="Texture2D" uid="uid://dwt2rmvvhnhr1" path="res://universal_scenes/transition_assets/handRight_3.png" id="7_4b7a6"]
@@ -53,7 +52,7 @@ animations = [{
 
 [node name="GameTransitionEarlynet" type="Node2D" unique_id=2053328765]
 script = ExtResource("1_5duto")
-stage1Games = Array[PackedScene]([ExtResource("2_tlq4w"), ExtResource("3_curyv")])
+stage1Games = Array[PackedScene]([ExtResource("2_tlq4w")])
 
 [node name="laptop" type="Sprite2D" parent="." unique_id=422095207]
 texture = ExtResource("1_3d3ve")
