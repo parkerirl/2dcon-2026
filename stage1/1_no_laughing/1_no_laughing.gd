@@ -1,9 +1,9 @@
 extends Node2D
 
-var lastBeat: int
-var frameDuration: float
-var gameAudio: Node
-var gameLengthBeats: int
+var lastBeat: int = -1
+var frameDuration: float = 60 / Global.bpm
+var gameAudio: Node = AudioManager.get_node("level1_laugh")
+var gameLengthBeats: int= 16
 
 @export var instructions: String = "No laughing!"
 @export var videos: Array[AnimatedSprite2D]
@@ -23,11 +23,9 @@ var inputDelayCounter: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	lastBeat = -1
-	#gameAudio = AudioManager.get_node("earlyTransition")
-	gameAudio = $AudioStreamPlayer2D
-	gameLengthBeats = 16
-	frameDuration = 60 / Global.bpm
+	Engine.time_scale = Global.gameTimeScaleFactor
+	gameAudio.pitch_scale = Global.gameTimeScaleFactor
+	gameAudio.play()
 	
 	for sprite in videos:
 		sprite.visible = false
@@ -45,7 +43,7 @@ func _ready() -> void:
 	# 2 = laugh_2
 	# 3 = laugh_3
 	
-	Global.gameWon = true
+	Global.gameWon = 1
 	inputDelay = [60, 75, 90, 120].pick_random()
 	inputDelayCounter = 0
 			
@@ -68,7 +66,6 @@ func _process(_delta: float) -> void:
 	var currentBeat = floori(time * (Global.bpm / 60.0))
 	if currentBeat != lastBeat:
 		lastBeat = currentBeat
-		print(lastBeat)
 		if lastBeat >= gameLengthBeats:
 			TransitionBack()
 	
@@ -101,13 +98,16 @@ func _process(_delta: float) -> void:
 			if(random_int < 10):
 				guyState = 2
 				
-				inputDelay = [60, 75, 90, 120].pick_random()
+				inputDelay = [30, 45, 60, 75, 90].pick_random()
 				inputDelayCounter = 0
 				
 		elif(guyState == 2):
 			if(random_int < 10):
 				guyState = 3
-				Global.gameWon = false
-				
-				inputDelay = [60, 75, 90, 120].pick_random()
-				inputDelayCounter = 0
+				Global.gameWon = 0
+				var sfxLaugh = AudioManager.get_node("sfx_laugh")
+				sfxLaugh.pitch_scale = Global.gameTimeScaleFactor
+				sfxLaugh.play()
+				var sfxFail = AudioManager.get_node("sfx_fail")
+				sfxFail.pitch_scale = Global.gameTimeScaleFactor
+				sfxFail.play()

@@ -8,19 +8,25 @@ var instructionText = UI.get_node("instructions")
 
 var gameAudio = AudioManager.get_node("earlyTransition")
 
-#Controls the transition to each microgame
-func MicrogameTransition() -> void:
+var gameLengthBeats: int = 8
 
-	var nextGame: PackedScene = stage1Games.pick_random()
-	
-	var temp = nextGame.instantiate()
-	var gameInstructions = temp.instructions
+var nextGame: PackedScene
+var temp 
+var gameInstructions
+
+func PrepareMicrogame() -> void:
+	nextGame = stage1Games.pick_random()
+	temp = nextGame.instantiate()
+	gameInstructions = temp.instructions
 	instructionText.clear()
 	instructionText.append_text("[shake rate=12.0 level=18.0 connected=0]" + gameInstructions + "[/shake]")
 	print (gameInstructions)
-	temp.queue_free()
 
-	await get_tree().create_timer(2.0).timeout
+#Controls the transition to each microgame
+func MicrogameTransition() -> void:
+
+	#await get_tree().create_timer(2.0).timeout
+	temp.queue_free()
 	get_tree().change_scene_to_packed(nextGame)
 	
 	#get gamewon boolean, if won, play win state, then play normal transition
@@ -28,19 +34,30 @@ func MicrogameTransition() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+		
+	if Global.gameWon == 0:
+		gameAudio = AudioManager.get_node("earlyFailTransition")
+	elif Global.gameWon == 1:
+		gameAudio = AudioManager.get_node("earlySuccessTransition")
+	else:
+		gameAudio = AudioManager.get_node("earlyTransition")
+	
 	#NOTES: Engine.time_scale speeds up everything evenly but audio,
 	#audio runs on its own server and must be controlled with pitch_scale.
-	#Engine.time_scale = 2.0
-	#gameAudio.pitch_scale = 2.0
-
-	spritesToTween = $animatedSprites.get_children()
+	Engine.time_scale = Global.gameTimeScaleFactor
+	gameAudio.pitch_scale = Global.gameTimeScaleFactor
+	gameAudio.play()
 	frameDuration = 60 / Global.bpm
+	
+	spritesToTween = $animatedSprites.get_children()
+	
+	PrepareMicrogame()
 	
 	#Set sprite fps to length of a single beat of the current bpm
 	for sprite in spritesToTween:
 		sprite.sprite_frames.set_animation_speed("default", 1.0 / frameDuration)
 	
-	MicrogameTransition()
+	#MicrogameTransition()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -52,6 +69,8 @@ func _physics_process(_delta: float) -> void:
 	#ANIMATION EXECUTION--------------------------
 	if currentBeat != lastBeat:
 		lastBeat = currentBeat
+		if lastBeat >= gameLengthBeats:
+			MicrogameTransition()
 		
 		for sprite in spritesToTween:
 			var scaleTween = create_tween().set_parallel(true)

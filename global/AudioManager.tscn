@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://cuwya1yh2lhry"]
 
 [ext_resource type="AudioStream" uid="uid://0jufluhvn3ir" path="res://audio/level1/early_transition.ogg" id="1_ap5g2"]
+[ext_resource type="AudioStream" uid="uid://cshahdwx34ghf" path="res://audio/level1/early_win.ogg" id="2_pt2dj"]
+[ext_resource type="AudioStream" uid="uid://dhiak3lb0hynl" path="res://audio/level1/early_lose.ogg" id="3_qvr7k"]
+[ext_resource type="AudioStream" uid="uid://btt75hvhhj0s2" path="res://audio/level1/early_laugh.ogg" id="4_qvr7k"]
+[ext_resource type="AudioStream" uid="uid://b3pcwpp453wr7" path="res://audio/level1/sfx_laugh.ogg" id="5_5hfb4"]
+[ext_resource type="AudioStream" uid="uid://o6gjyiirb0e0" path="res://audio/generic/fail_jingle.ogg" id="6_1juyv"]
 
 [node name="AudioManager" type="Node" unique_id=518492664]
 
 [node name="earlyTransition" type="AudioStreamPlayer2D" parent="." unique_id=1116312522]
 stream = ExtResource("1_ap5g2")
-autoplay = true
+
+[node name="earlySuccessTransition" type="AudioStreamPlayer2D" parent="." unique_id=1992432100]
+stream = ExtResource("2_pt2dj")
+
+[node name="earlyFailTransition" type="AudioStreamPlayer2D" parent="." unique_id=2069597031]
+stream = ExtResource("3_qvr7k")
+
+[node name="level1_laugh" type="AudioStreamPlayer2D" parent="." unique_id=33325975]
+stream = ExtResource("4_qvr7k")
+
+[node name="sfx_laugh" type="AudioStreamPlayer2D" parent="." unique_id=1276833913]
+stream = ExtResource("5_5hfb4")
+
+[node name="sfx_fail" type="AudioStreamPlayer2D" parent="." unique_id=204321343]
+stream = ExtResource("6_1juyv")

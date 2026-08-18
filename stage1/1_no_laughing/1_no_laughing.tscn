@@ -271,7 +271,6 @@
 [ext_resource type="Texture2D" uid="uid://dwsvso80obvag" path="res://stage1/1_no_laughing/guy_3_2.png" id="268_1wq2f"]
 [ext_resource type="Texture2D" uid="uid://gurcysuhi86v" path="res://stage1/1_no_laughing/guy_fail.png" id="269_ptv6i"]
 [ext_resource type="Texture2D" uid="uid://ckgn60fxbvlxg" path="res://stage1/1_no_laughing/guy_fail_2.png" id="270_vvuuu"]
-[ext_resource type="AudioStream" uid="uid://btt75hvhhj0s2" path="res://audio/level1/early_laugh.ogg" id="271_a8lc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2xhc"]
 size = Vector2(390, 384)
@@ -1253,9 +1252,5 @@ animation = &"laugh_1"
 autoplay = "default"
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2117536724]
-stream = ExtResource("271_a8lc2")
-autoplay = true
 
 [connection signal="input_event" from="Area2D" to="." method="_on_input_event"]
