@@ -48,6 +48,7 @@ func _physics_process(_delta: float) -> void:
 	var time = gameAudio.get_playback_position() + AudioServer.get_time_to_next_mix() - AudioServer.get_output_latency()
 	var currentBeat = floori(time * (Global.bpm / 60.0))
 	
+	
 	#ANIMATION EXECUTION--------------------------
 	if currentBeat != lastBeat:
 		lastBeat = currentBeat

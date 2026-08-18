@@ -1,5 +1,10 @@
 extends Node2D
 
+var lastBeat: int
+var frameDuration: float
+var gameAudio: Node
+var gameLengthBeats: int
+
 @export var instructions: String = "No laughing!"
 @export var videos: Array[AnimatedSprite2D]
 var videoToShow: AnimatedSprite2D
@@ -17,6 +22,13 @@ var inputDelayCounter: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	lastBeat = -1
+	#gameAudio = AudioManager.get_node("earlyTransition")
+	gameAudio = $AudioStreamPlayer2D
+	gameLengthBeats = 16
+	frameDuration = 60 / Global.bpm
+	
 	for sprite in videos:
 		sprite.visible = false
 		
@@ -42,10 +54,24 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if(guyState > 0 and guyState < 3):
 				guyState -= 1
-		
+
+func TransitionBack() -> void:
+	var nextGame: PackedScene = load("res://universal_scenes/game_transition.tscn")
+	var temp = nextGame.instantiate()
+	temp.queue_free()
+	get_tree().change_scene_to_packed(nextGame)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	var time = gameAudio.get_playback_position() + AudioServer.get_time_to_next_mix() - AudioServer.get_output_latency()
+	var currentBeat = floori(time * (Global.bpm / 60.0))
+	if currentBeat != lastBeat:
+		lastBeat = currentBeat
+		print(lastBeat)
+		if lastBeat >= gameLengthBeats:
+			TransitionBack()
+	
 	guy.play(guyAnim[guyState])
 	
 	if(guyState > 0 and guyState < 3):
