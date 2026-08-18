@@ -9,3 +9,4 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	progress_bar.value = timer.time_left
+	print(timer.time_left)
