@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b778acgd6o1cj"]
+
+[ext_resource type="Script" uid="uid://cityu0rsfdn2m" path="res://stage1/3_navigate/3_navigate.gd" id="1_smjjl"]
+[ext_resource type="Script" uid="uid://c326ubu1pc6e3" path="res://stage1/3_navigate/draggable.gd" id="2_sl8nc"]
+[ext_resource type="Texture2D" uid="uid://b14e0aargqa3q" path="res://audio/level1/bg.png" id="3_msgf7"]
+[ext_resource type="Texture2D" uid="uid://3wl0gwmokufg" path="res://stage1/3_navigate/player.png" id="3_sl8nc"]
+[ext_resource type="Texture2D" uid="uid://dr1kpnrpln7bp" path="res://stage1/3_navigate/win.png" id="4_sl8nc"]
+[ext_resource type="Texture2D" uid="uid://bqluip11rh4x3" path="res://stage1/3_navigate/freaky-skull.png" id="6_its14"]
+
+[node name="Main" type="Node2D" unique_id=671729599]
+script = ExtResource("1_smjjl")
+
+[node name="Player" type="Node2D" parent="." unique_id=1158089992]
+top_level = true
+script = ExtResource("2_sl8nc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1163286090]
+position = Vector2(1000, 900)
+scale = Vector2(2, 2)
+texture = ExtResource("3_sl8nc")
+
+[node name="Control" type="Control" parent="." unique_id=44539512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Goal" type="Sprite2D" parent="." unique_id=689254822]
+position = Vector2(935, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("4_sl8nc")
+
+[node name="Maze1" type="Polygon2D" parent="." unique_id=679135949]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(423, -88, -55, -82, -45, 1186, 1942, 1158, 1957, -98, 1141, -113, 1138, 229, 1474, 357, 1063, 621, 1408, 1098, 887, 1120, 557, 555, 950, 376, 614, 222, 846, -107)
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1874173048]
+z_index = -1
+position = Vector2(932.00006, 591.00006)
+scale = Vector2(2075.0002, 1920)
+texture = ExtResource("3_msgf7")
+
+[node name="jumpscare" type="Sprite2D" parent="." unique_id=1187664312]
+visible = false
+top_level = true
+position = Vector2(969.49994, 563.99994)
+scale = Vector2(0.97873384, 0.39815426)
+texture = ExtResource("6_its14")

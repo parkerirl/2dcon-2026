@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://btt75hvhhj0s2" path="res://audio/level1/early_laugh.ogg" id="4_qvr7k"]
 [ext_resource type="AudioStream" uid="uid://b3pcwpp453wr7" path="res://audio/level1/sfx_laugh.ogg" id="5_5hfb4"]
 [ext_resource type="AudioStream" uid="uid://o6gjyiirb0e0" path="res://audio/generic/fail_jingle.ogg" id="6_1juyv"]
+[ext_resource type="AudioStream" uid="uid://nd5h6tlkq2jf" path="res://audio/level1/early_navigate.ogg" id="7_te3lc"]
+[ext_resource type="AudioStream" uid="uid://cybk0dpr6p80c" path="res://audio/generic/success_jingle.ogg" id="8_wc3te"]
+[ext_resource type="AudioStream" uid="uid://rt5ort2w806v" path="res://audio/generic/sfx_scream.ogg" id="9_kgspm"]
 
 [node name="AudioManager" type="Node" unique_id=518492664]
 
@@ -26,3 +29,12 @@ stream = ExtResource("5_5hfb4")
 
 [node name="sfx_fail" type="AudioStreamPlayer2D" parent="." unique_id=204321343]
 stream = ExtResource("6_1juyv")
+
+[node name="level1_navigate" type="AudioStreamPlayer2D" parent="." unique_id=626212273]
+stream = ExtResource("7_te3lc")
+
+[node name="sfx_win" type="AudioStreamPlayer2D" parent="." unique_id=1533405648]
+stream = ExtResource("8_wc3te")
+
+[node name="sfx_scream" type="AudioStreamPlayer2D" parent="." unique_id=1943659371]
+stream = ExtResource("9_kgspm")
