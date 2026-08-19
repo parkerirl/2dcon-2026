@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b778acgd6o1cj"]
+
+[ext_resource type="Script" uid="uid://cqaddviniijop" path="res://stage1/4_scroll/4_scroll.gd" id="1_krc42"]
+[ext_resource type="Texture2D" uid="uid://2videmd7k5gs" path="res://stage1/4_scroll/bg.png" id="2_8f60p"]
+[ext_resource type="Texture2D" uid="uid://dfdjlifcwodkq" path="res://img/pexels-kate-mahoney-2813472-38235616.jpg" id="2_krc42"]
+[ext_resource type="Texture2D" uid="uid://dcq772uwbqkpo" path="res://stage1/4_scroll/scroll.png" id="4_o6ks3"]
+[ext_resource type="Texture2D" uid="uid://d3yum8tiibbrx" path="res://stage1/4_scroll/scroll_clicked.png" id="5_ypuok"]
+[ext_resource type="Texture2D" uid="uid://dkwj8548scyvf" path="res://stage1/4_scroll/agree.png" id="6_0w71m"]
+[ext_resource type="Script" uid="uid://bjdyp2lvrapyu" path="res://stage1/4_scroll/texture_button.gd" id="6_a3hof"]
+
+[node name="Main" type="Node2D" unique_id=671729599]
+script = ExtResource("1_krc42")
+
+[node name="Control" type="Control" parent="." unique_id=44539512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1874173048]
+z_index = -1
+position = Vector2(978, 586)
+scale = Vector2(0.72784394, 0.465)
+texture = ExtResource("2_krc42")
+
+[node name="text1" type="Label" parent="." unique_id=685315244]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+offset_left = 264.0
+offset_top = 211.0
+offset_right = 1554.0
+offset_bottom = 767.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum elit sit amet ultrices rhoncus. Maecenas commodo semper orci, id tincidunt mauris tristique eu. Proin non ex arcu. Donec orci risus, aliquet sit amet eros at, elementum pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae metus mauris. Pellentesque in lorem tincidunt, blandit ex et, vestibulum leo. Etiam congue velit enim, elementum suscipit nisi ornare volutpat. Vivamus nec viverra sapien. Morbi pharetra odio purus, in molestie lorem rhoncus vitae. Nunc nisl tellus, placerat ac pellentesque a, sollicitudin eu nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam congue varius sapien, at faucibus enim viverra ut. Mauris commodo molestie velit eget pharetra. Suspendisse auctor sagittis metus sed dignissim. Nulla varius ultricies ornare.
+
+Proin eget elit dui. Aenean pellentesque fermentum eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper tempus lorem, at mattis mi suscipit id. Nunc magna augue, varius vel lacus vitae, porta auctor orci. In sodales mi blandit lobortis aliquet. Suspendisse varius leo venenatis porttitor vehicula. Praesent vestibulum, mauris id congue venenatis, arcu urna fringilla tortor, quis placerat enim eros quis ipsum.
+
+Aenean facilisis tristique lacus vitae iaculis. Proin vitae pretium arcu. Suspendisse malesuada elementum sem quis eleifend. Duis nec fringilla nisl, facilisis cursus metus. Praesent sit amet egestas dui. Donec feugiat ante id dui posuere, sed feugiat mi elementum. Vivamus euismod, metus nec scelerisque dignissim, dolor libero condimentum ante, ut mollis diam nulla vel augue. Nunc aliquam ligula in neque fermentum, ac interdum diam porta.
+
+Ut et lobortis lacus, vel semper nulla. Cras vehicula sodales elit, ac luctus ante egestas vitae. Phasellus tempus pulvinar est eget congue. Pellentesque eget venenatis augue. Cras ut diam vel arcu pellentesque egestas id eget eros. Nullam cursus lectus diam, ac interdum mauris pharetra quis. Suspendisse eu consectetur nisi. Pellentesque a nibh eget ex venenatis maximus. Nunc semper et ex ac porttitor. Aenean interdum turpis eu mi hendrerit, a bibendum urna tempus. In vulputate, sapien et mollis tempor, justo sem pellentesque lectus, fringilla dapibus risus lectus eget orci. Aenean porta nisl vitae tempor auctor. Integer lobortis urna in leo accumsan interdum. Phasellus tempus porttitor elit ut ullamcorper.
+
+Integer a vehicula purus, et placerat massa. Pellentesque iaculis fringilla sodales. Nullam volutpat, sem et ullamcorper venenatis, neque nisi pretium arcu, non commodo diam tortor vel ipsum. Proin justo arcu, molestie ac cursus commodo, ultricies in magna. Morbi eget sollicitudin magna. Ut consectetur sem at ipsum convallis consectetur. Nullam eget orci vestibulum, tempus risus a, dapibus purus. Ut maximus nisi vel dictum finibus. Curabitur aliquet eros sapien, in imperdiet tortor convallis nec."
+autowrap_mode = 2
+
+[node name="textbg" type="Sprite2D" parent="." unique_id=124685249]
+position = Vector2(906.99994, 482.5)
+scale = Vector2(20.656248, 9.328125)
+texture = ExtResource("2_8f60p")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1648836555]
+offset_left = 1587.0
+offset_top = 650.0
+offset_right = 1651.0
+offset_bottom = 714.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_o6ks3")
+texture_pressed = ExtResource("5_ypuok")
+texture_disabled = ExtResource("6_0w71m")
+script = ExtResource("6_a3hof")
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]

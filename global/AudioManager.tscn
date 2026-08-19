@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://nd5h6tlkq2jf" path="res://audio/level1/early_navigate.ogg" id="7_te3lc"]
 [ext_resource type="AudioStream" uid="uid://cybk0dpr6p80c" path="res://audio/generic/success_jingle.ogg" id="8_wc3te"]
 [ext_resource type="AudioStream" uid="uid://rt5ort2w806v" path="res://audio/generic/sfx_scream.ogg" id="9_kgspm"]
+[ext_resource type="AudioStream" uid="uid://cim23gy6wwfp" path="res://audio/level1/early_bonus3.ogg" id="10_axni5"]
 
 [node name="AudioManager" type="Node" unique_id=518492664]
 
@@ -38,3 +39,6 @@ stream = ExtResource("8_wc3te")
 
 [node name="sfx_scream" type="AudioStreamPlayer2D" parent="." unique_id=1943659371]
 stream = ExtResource("9_kgspm")
+
+[node name="level1_scroll" type="AudioStreamPlayer2D" parent="." unique_id=1518260673]
+stream = ExtResource("10_axni5")
