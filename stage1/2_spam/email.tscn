@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cohs4ivc8xmt6"]
+
+[ext_resource type="Texture2D" uid="uid://c10ag4u5jmobc" path="res://stage1/2_spam/trash-solid.png" id="1_h6kvh"]
+[ext_resource type="Texture2D" uid="uid://bxsvl1ji3olo1" path="res://stage1/2_spam/trash-pressed.png" id="2_d8fvl"]
+[ext_resource type="Script" uid="uid://o0whgf721wh2" path="res://stage1/2_spam/delete_email.gd" id="3_d8fvl"]
+
+[node name="Email" type="Node2D" unique_id=1840559964]
+scale = Vector2(2, 2)
+
+[node name="DeleteEmail" type="TextureButton" parent="." unique_id=496452422]
+z_index = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_h6kvh")
+texture_pressed = ExtResource("2_d8fvl")
+script = ExtResource("3_d8fvl")
+
+[node name="EmailText" type="RichTextLabel" parent="." unique_id=1119957633]
+modulate = Color(0, 0, 0, 1)
+offset_left = 67.5
+offset_right = 888.5
+offset_bottom = 62.0
+bbcode_enabled = true
+text = "[b]Subject[/b] - email text email text email text email text email text email text..."
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=639396436]
+z_index = -1
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 887.0
+offset_bottom = 68.5
+mouse_filter = 2
+color = Color(0.7380309, 0.73803085, 0.73803085, 1)
+
+[connection signal="button_down" from="DeleteEmail" to="DeleteEmail" method="_on_button_down"]
