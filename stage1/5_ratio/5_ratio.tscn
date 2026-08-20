@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b778acgd6o1cj"]
+
+[ext_resource type="Script" uid="uid://c33nbp82qcmaf" path="res://stage1/5_ratio/5_ratio.gd" id="1_f3s3m"]
+[ext_resource type="Texture2D" uid="uid://dxmbqb4cc0b62" path="res://stage1/5_ratio/bg.png" id="2_f3s3m"]
+[ext_resource type="Texture2D" uid="uid://sg1ckmeijucc" path="res://stage1/5_ratio/thumbs-up-pressed.png" id="3_02wv0"]
+[ext_resource type="Texture2D" uid="uid://b1j5d2q77iibq" path="res://stage1/5_ratio/thumbs-up-regular.png" id="4_f3s3m"]
+[ext_resource type="Script" uid="uid://6x3pu7pwayc1" path="res://stage1/5_ratio/upvote.gd" id="5_02wv0"]
+[ext_resource type="Texture2D" uid="uid://chwf7bhns2tcn" path="res://stage1/5_ratio/thumbs-down-regular.png" id="6_ci8nr"]
+[ext_resource type="Texture2D" uid="uid://cqqso6qo7brg7" path="res://stage1/5_ratio/thumbs-down-pressed.png" id="7_qeya8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y2xhc"]
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_ci8nr"]
+font_size = 52
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_iojli"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdy1l"]
+font = SubResource("SystemFont_iojli")
+font_size = 120
+
+[node name="Main" type="Node2D" unique_id=671729599]
+script = ExtResource("1_f3s3m")
+instructions = null
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1874173048]
+z_index = -1
+position = Vector2(960.4999, 544.5)
+scale = Vector2(2.0177083, 2.161111)
+texture = ExtResource("2_f3s3m")
+
+[node name="upvote" type="TextureButton" parent="." unique_id=1648836555]
+offset_left = 1005.0
+offset_top = 652.0
+offset_right = 1069.0
+offset_bottom = 716.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("4_f3s3m")
+texture_pressed = ExtResource("3_02wv0")
+script = ExtResource("5_02wv0")
+
+[node name="downvote" type="TextureButton" parent="." unique_id=648591042]
+offset_left = 1567.0
+offset_top = 675.0
+offset_right = 1631.0
+offset_bottom = 739.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("6_ci8nr")
+texture_pressed = ExtResource("7_qeya8")
+script = ExtResource("5_02wv0")
+
+[node name="Label" type="Label" parent="." unique_id=84648147]
+modulate = Color(0, 0, 0, 1)
+offset_left = 134.0
+offset_top = 670.0
+offset_right = 1018.0
+offset_bottom = 790.0
+text = "Was this answer helpful?"
+label_settings = SubResource("LabelSettings_y2xhc")
+
+[node name="question" type="Label" parent="." unique_id=2002859259]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_left = 76.0
+offset_top = 218.0
+offset_right = 1840.0
+offset_bottom = 322.0
+text = "Q:"
+label_settings = SubResource("LabelSettings_ci8nr")
+
+[node name="answer" type="Label" parent="." unique_id=926333358]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_left = 75.0
+offset_top = 364.0
+offset_right = 1916.0
+offset_bottom = 624.0
+text = "A:"
+label_settings = SubResource("LabelSettings_ci8nr")
+
+[node name="Questionbg" type="ColorRect" parent="." unique_id=2002233339]
+z_index = -1
+offset_left = 64.0
+offset_top = 206.0
+offset_right = 1851.0
+offset_bottom = 332.0
+color = Color(0.7691298, 0.89613837, 0.9786082, 1)
+
+[node name="Answerbg" type="ColorRect" parent="." unique_id=658048503]
+z_index = -1
+offset_left = 64.0
+offset_top = 355.0
+offset_right = 1852.0
+offset_bottom = 644.0
+color = Color(0.23562881, 0.5922155, 0.78397954, 1)
+
+[node name="count" type="Label" parent="." unique_id=256733707]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1356.0
+offset_top = 750.0
+offset_right = 1509.0
+offset_bottom = 893.0
+text = "+0"
+label_settings = SubResource("LabelSettings_mdy1l")
+
+[connection signal="button_down" from="upvote" to="." method="_on_upvote_button_down"]
+[connection signal="button_down" from="downvote" to="." method="_on_downvote_button_down"]
