@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://cohs4ivc8xmt6"]
 
 [ext_resource type="Texture2D" uid="uid://c10ag4u5jmobc" path="res://stage1/2_spam/trash-solid.png" id="1_h6kvh"]
+[ext_resource type="Script" uid="uid://bddital4oce3p" path="res://stage1/2_spam/email.gd" id="1_s0g4e"]
 [ext_resource type="Texture2D" uid="uid://bxsvl1ji3olo1" path="res://stage1/2_spam/trash-pressed.png" id="2_d8fvl"]
 [ext_resource type="Script" uid="uid://o0whgf721wh2" path="res://stage1/2_spam/delete_email.gd" id="3_d8fvl"]
+[ext_resource type="Texture2D" uid="uid://ddp711putrsem" path="res://stage1/2_spam/circle-xmark-solid.png" id="4_bq7tq"]
 
 [node name="Email" type="Node2D" unique_id=1840559964]
 scale = Vector2(2, 2)
+script = ExtResource("1_s0g4e")
 
 [node name="DeleteEmail" type="TextureButton" parent="." unique_id=496452422]
 z_index = 1
@@ -13,6 +16,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_h6kvh")
 texture_pressed = ExtResource("2_d8fvl")
+texture_disabled = ExtResource("4_bq7tq")
 script = ExtResource("3_d8fvl")
 
 [node name="EmailText" type="RichTextLabel" parent="." unique_id=1119957633]
