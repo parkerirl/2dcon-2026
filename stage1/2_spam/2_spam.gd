@@ -81,7 +81,8 @@ func _process(_delta: float) -> void:
 	for i in emailObjects:
 		if i.get_junk() == true:
 			noJunk = false
-	if noJunk == false:
+			break
+	if noJunk == true:
 		Global.gameWon = 1
 	
 	var time = gameAudio.get_playback_position() + AudioServer.get_time_to_next_mix() - AudioServer.get_output_latency()
