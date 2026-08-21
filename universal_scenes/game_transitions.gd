@@ -16,6 +16,8 @@ var nextGame: PackedScene
 var temp 
 var gameInstructions
 
+var spedUp: bool = false
+
 func PrepareMicrogame() -> void:
 	if gamePool.is_empty():
 		gamePool = stage1Games.duplicate()
@@ -35,16 +37,18 @@ func MicrogameTransition() -> void:
 	get_tree().change_scene_to_packed(nextGame)
 
 func _ready() -> void:
-		
+	spedUp = false
 	if Global.gameWon == 0:
 		gameAudio = AudioManager.get_node("earlyFailTransition")
 	elif Global.gameWon == 1:
 		gameAudio = AudioManager.get_node("earlySuccessTransition")
 	else:
 		gameAudio = AudioManager.get_node("earlyTransition")
-	if Global.streak == 10:
+	#if Global.streak == 10:
+	if Global.streak == 2:
 		gameAudio = AudioManager.get_node("speedupTransition")
-		Global.gameTimeScaleFactor = Global.gameTimeScaleFactor * 1.1
+		#Global.gameTimeScaleFactor = Global.gameTimeScaleFactor * 1.1
+		spedUp = true
 		Global.streak = 0
 	
 	#NOTES: Engine.time_scale speeds up everything evenly but audio,
@@ -72,7 +76,11 @@ func _physics_process(_delta: float) -> void:
 	if currentBeat != lastBeat:
 		lastBeat = currentBeat
 		if lastBeat >= gameLengthBeats:
-			MicrogameTransition()
+			if spedUp == true:
+				Global.gameTimeScaleFactor = Global.gameTimeScaleFactor * 1.1
+				get_tree().reload_current_scene()
+			else:
+				MicrogameTransition()
 		
 		for sprite in spritesToTween:
 			var scaleTween = create_tween().set_parallel(true)
