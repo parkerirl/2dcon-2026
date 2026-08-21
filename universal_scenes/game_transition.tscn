@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ps37wbx8wi6w" path="res://universal_scenes/transition_assets/laptop.png" id="1_3d3ve"]
 [ext_resource type="Script" uid="uid://b2b860gefayx2" path="res://universal_scenes/game_transitions.gd" id="1_5duto"]
-[ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/5_ratio/5_ratio.tscn" id="2_curyv"]
-[ext_resource type="PackedScene" uid="uid://boaew6l3t4pjc" path="res://stage1/4_scroll/6_close.tscn" id="3_curyv"]
+[ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/1_no_laughing/1_no_laughing.tscn" id="2_curyv"]
+[ext_resource type="PackedScene" uid="uid://boaew6l3t4pjc" path="res://stage1/2_spam/2_spam.tscn" id="3_curyv"]
 [ext_resource type="Texture2D" uid="uid://b7i7m5g31k213" path="res://universal_scenes/transition_assets/star_background/frame_0_delay-0.09s.jpg" id="4_us5jb"]
 [ext_resource type="Texture2D" uid="uid://bkoxxqsw3byhw" path="res://universal_scenes/transition_assets/handRight_1.png" id="5_curyv"]
 [ext_resource type="Texture2D" uid="uid://t6ke3j5mhnbr" path="res://universal_scenes/transition_assets/star_background/frame_1_delay-0.09s.jpg" id="5_fmucu"]
@@ -16,6 +16,19 @@
 [ext_resource type="Texture2D" uid="uid://djt4gdotna0rl" path="res://universal_scenes/transition_assets/star_background/frame_5_delay-0.09s.jpg" id="9_ln7ca"]
 [ext_resource type="Texture2D" uid="uid://bxm5w4oxn10sp" path="res://universal_scenes/transition_assets/handLeft_2.png" id="9_pqmyu"]
 [ext_resource type="Texture2D" uid="uid://p1d1ijhq1nqs" path="res://universal_scenes/transition_assets/handLeft_3.png" id="10_5g5f4"]
+[ext_resource type="Texture2D" uid="uid://d0yafddnje6pq" path="res://universal_scenes/transition_assets/cmd.png" id="10_jufxm"]
+[ext_resource type="Texture2D" uid="uid://bnppi75w5fgr8" path="res://universal_scenes/transition_assets/folder.png" id="11_fmucu"]
+[ext_resource type="Texture2D" uid="uid://rq6ju4bpu2pu" path="res://universal_scenes/transition_assets/error_cluster.png" id="11_ln7ca"]
+[ext_resource type="Texture2D" uid="uid://dcnirr4ff6xyc" path="res://universal_scenes/transition_assets/bottom_bar.png" id="12_5jlqu"]
+[ext_resource type="Texture2D" uid="uid://cvgpsv4b3pyrs" path="res://universal_scenes/transition_assets/error1.png" id="13_ovuso"]
+[ext_resource type="Texture2D" uid="uid://elx6r5mrd5a8" path="res://universal_scenes/transition_assets/error2.png" id="14_avsnl"]
+[ext_resource type="Shader" uid="uid://ccsfb7mto8brf" path="res://universal_scenes/dissolve.gdshader" id="14_rnt2o"]
+[ext_resource type="Texture2D" uid="uid://dhsjf1daoutbr" path="res://universal_scenes/transition_assets/folder2.png" id="16_077rv"]
+[ext_resource type="Texture2D" uid="uid://sbvjw4alqin8" path="res://universal_scenes/transition_assets/popup_blank.png" id="16_avsnl"]
+[ext_resource type="Texture2D" uid="uid://b3qfx1bmldblv" path="res://universal_scenes/transition_assets/folder3_white.png" id="17_ovuso"]
+[ext_resource type="Texture2D" uid="uid://bemap7o2i8jb7" path="res://universal_scenes/transition_assets/folder3_color.png" id="18_avsnl"]
+[ext_resource type="Texture2D" uid="uid://bslcg34b5jc53" path="res://universal_scenes/transition_assets/folder4_white.png" id="19_2aexh"]
+[ext_resource type="Texture2D" uid="uid://cu3kwhjaos3ak" path="res://universal_scenes/transition_assets/folder6.png" id="20_gaag7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ogjf"]
 animations = [{
@@ -41,6 +54,69 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cga16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ovuso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_avsnl")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6e7is"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jjo74"]
+noise = SubResource("FastNoiseLite_6e7is")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wc1aq"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f62aq"]
+width = 40
+height = 1103
+noise = SubResource("FastNoiseLite_wc1aq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ln7ca"]
+shader = ExtResource("14_rnt2o")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/mix_ratio = 0.0
+shader_parameter/dissolve_noise = SubResource("NoiseTexture2D_f62aq")
+shader_parameter/dissolve_gradient = SubResource("NoiseTexture2D_jjo74")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyiby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_fmucu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_077rv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ovuso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_avsnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2aexh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2aexh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gaag7")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dcgyd"]
@@ -388,12 +464,56 @@ sprite_frames = SubResource("SpriteFrames_2ogjf")
 autoplay = "default"
 frame_progress = 0.6048399
 
+[node name="Cmd" type="Sprite2D" parent="layout" unique_id=607889075]
+position = Vector2(521, 330)
+texture = ExtResource("10_jufxm")
+
+[node name="ErrorCluster" type="Sprite2D" parent="layout" unique_id=250445054]
+position = Vector2(1437, 553)
+texture = ExtResource("11_ln7ca")
+
+[node name="BottomBar" type="Sprite2D" parent="layout" unique_id=636393618]
+texture = ExtResource("12_5jlqu")
+centered = false
+
+[node name="error_transition" type="AnimatedSprite2D" parent="layout" unique_id=995147596]
+visible = false
+sprite_frames = SubResource("SpriteFrames_cga16")
+frame = 1
+frame_progress = 1.0
+centered = false
+
 [node name="laptop" type="Sprite2D" parent="layout" unique_id=422095207]
 texture = ExtResource("1_3d3ve")
 centered = false
 metadata/_edit_lock_ = true
 
+[node name="popup" type="Sprite2D" parent="layout" unique_id=1908183274]
+position = Vector2(962, 389)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("16_avsnl")
+
 [node name="animatedSprites" type="Node" parent="layout" unique_id=1939133557]
+
+[node name="folder1" type="AnimatedSprite2D" parent="layout/animatedSprites" unique_id=396573929]
+material = SubResource("ShaderMaterial_ln7ca")
+position = Vector2(296.5, 656.5)
+sprite_frames = SubResource("SpriteFrames_wyiby")
+
+[node name="folder2" type="AnimatedSprite2D" parent="layout/animatedSprites" unique_id=1037986354]
+material = SubResource("ShaderMaterial_ln7ca")
+position = Vector2(439, 656.5)
+sprite_frames = SubResource("SpriteFrames_wyiby")
+
+[node name="folder3" type="AnimatedSprite2D" parent="layout/animatedSprites" unique_id=1156233206]
+material = SubResource("ShaderMaterial_ln7ca")
+position = Vector2(577, 656.5)
+sprite_frames = SubResource("SpriteFrames_wyiby")
+
+[node name="folder4" type="AnimatedSprite2D" parent="layout/animatedSprites" unique_id=89842268]
+material = SubResource("ShaderMaterial_ln7ca")
+position = Vector2(716, 656.5)
+sprite_frames = SubResource("SpriteFrames_wyiby")
 
 [node name="handLeft" type="AnimatedSprite2D" parent="layout/animatedSprites" unique_id=117291899]
 z_index = 1

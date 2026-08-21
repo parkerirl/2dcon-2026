@@ -47,9 +47,9 @@ func _physics_process(_delta: float) -> void:
 	if currentBeat != lastBeat:
 		print(currentBeat)
 		lastBeat = currentBeat
-		if currentBeat >= 4 and currentBeat < gameLengthBeats:
-			Show()
-		elif currentBeat >= gameLengthBeats:
+		if currentBeat >= gameLengthBeats:
 			Hide()
+		elif currentBeat >= 4 and currentBeat < gameLengthBeats:
+			Show()
 		else:
 			Hide()

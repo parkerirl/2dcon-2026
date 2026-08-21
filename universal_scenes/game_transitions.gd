@@ -15,6 +15,7 @@ var gameLengthBeats: int = 8
 var nextGame: PackedScene
 var temp 
 var gameInstructions
+var speedText
 
 var spedUp: bool = false
 
@@ -47,6 +48,16 @@ func _ready() -> void:
 	#if Global.streak == 10:
 	if Global.streak == 2:
 		gameAudio = AudioManager.get_node("speedupTransition")
+		
+		speedText = UI.get_node("speedup")
+		speedText.position = Vector2(-1742.0, 0.0)
+		var posTween = create_tween()
+		posTween.tween_property(speedText, "position", Vector2(0.0, 0.0), 1.0) \
+			.set_trans(posTween.TRANS_EXPO).set_ease(posTween.EASE_OUT)
+		posTween.tween_property(speedText, "position", Vector2(0.0, 0.0), 2.0) \
+			.set_trans(posTween.TRANS_EXPO).set_ease(posTween.EASE_OUT)
+		posTween.tween_property(speedText, "position", Vector2(1730.0, 0.0), 2.0) \
+			.set_trans(posTween.TRANS_EXPO).set_ease(posTween.EASE_OUT)
 		#Global.gameTimeScaleFactor = Global.gameTimeScaleFactor * 1.1
 		spedUp = true
 		Global.streak = 0
@@ -65,7 +76,8 @@ func _ready() -> void:
 	
 	#Set sprite fps to length of a single beat of the current bpm
 	for sprite in spritesToTween:
-		sprite.sprite_frames.set_animation_speed("default", 1.0 / frameDuration)
+		if sprite is AnimatedSprite2D:
+			sprite.sprite_frames.set_animation_speed("default", 1.0 / frameDuration)
 
 func _physics_process(_delta: float) -> void:
 	
@@ -88,3 +100,8 @@ func _physics_process(_delta: float) -> void:
 				.set_trans(scaleTween.TRANS_CIRC).set_ease(scaleTween.EASE_OUT)
 			scaleTween.chain().tween_property(sprite, "scale", Vector2(1.0, 1.0), 0.15) \
 				.set_trans(scaleTween.TRANS_SINE).set_ease(scaleTween.EASE_OUT)
+		
+		if lastBeat == 5:
+			var popupTween = create_tween()
+			popupTween.tween_property($layout/popup, "scale", Vector2(1.0, 1.0), 0.8) \
+				.set_trans(popupTween.TRANS_BOUNCE).set_ease(popupTween.EASE_OUT)

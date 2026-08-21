@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b3y1pvnrgkgk2" path="res://universal_scenes/instructions.gd" id="1_ah3m2"]
 [ext_resource type="Script" uid="uid://d22f1rp6kd6yl" path="res://universal_scenes/global_ui.gd" id="1_rryok"]
 [ext_resource type="Script" uid="uid://dafgncpxeumb7" path="res://universal_scenes/timer.gd" id="2_7vfb3"]
+[ext_resource type="Script" uid="uid://cjw8oympot0dg" path="res://universal_scenes/count.gd" id="2_8qd38"]
 [ext_resource type="Texture2D" uid="uid://cix8xsq53oky6" path="res://universal_scenes/timer_assets/shadow/shadow.png" id="2_b6dwy"]
 [ext_resource type="Texture2D" uid="uid://dwa2pqrwl2d2c" path="res://universal_scenes/timer_assets/shadow/shadow2.png" id="3_vvgd1"]
 [ext_resource type="Texture2D" uid="uid://cye0m58d4x38s" path="res://universal_scenes/timer_assets/shadow/shadow3.png" id="4_shg0q"]
@@ -533,6 +534,38 @@ shadow_color = Color(0, 0, 0, 1)
 [node name="UI" type="CanvasLayer" unique_id=822918922]
 process_mode = 3
 script = ExtResource("1_rryok")
+
+[node name="count" type="RichTextLabel" parent="." unique_id=1388944071]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -570.0
+offset_top = 108.0
+offset_right = 1.0
+offset_bottom = 496.59094
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 130
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("2_8qd38")
+
+[node name="speedup" type="RichTextLabel" parent="." unique_id=1547796028]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1742.0
+offset_right = -1742.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 80
+theme_override_font_sizes/normal_font_size = 250
+bbcode_enabled = true
+text = "[wave amp=120 freq=15 connected=1][rainbow speed=0.3 freq=1 sat=1 val=1]SPEED UP![/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="instructions" type="RichTextLabel" parent="." unique_id=616971023]
 modulate = Color(1, 1, 1, 0)
