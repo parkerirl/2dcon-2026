@@ -5,7 +5,7 @@ var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_scroll")
 var gameLengthBeats: int= 8
 
-@export var instructions: String = "Read Agreement!"
+@export var instructions: String = "Scroll to bottom!"
 
 #@export var player: Sprite2D
 

@@ -5,7 +5,7 @@ var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_ratio")
 var gameLengthBeats: int= 8
 
-@export var instructions: String = "Ratio!"
+@export var instructions: String = "Balance to zero!"
 
 #@export var player: Sprite2D
 

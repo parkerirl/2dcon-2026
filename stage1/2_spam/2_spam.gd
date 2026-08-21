@@ -5,7 +5,7 @@ var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_spam")
 var gameLengthBeats: int= 8
 
-@export var instructions: String = "Delete Spam!"
+@export var instructions: String = "Delete spam!"
 
 const EMAIL_SCENE = preload("res://stage1/2_spam/email.tscn")
 

@@ -5,7 +5,7 @@ var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_navigate")
 var gameLengthBeats: int= 8
 
-@export var instructions: String = "Navigate!"
+@export var instructions: String = "Get to yellow!"
 
 #@export var player: Sprite2D
 
