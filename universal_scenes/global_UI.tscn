@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqqv7qc84fvhi"]
 
 [ext_resource type="Script" uid="uid://b3y1pvnrgkgk2" path="res://universal_scenes/instructions.gd" id="1_ah3m2"]
+[ext_resource type="Script" uid="uid://d22f1rp6kd6yl" path="res://universal_scenes/global_ui.gd" id="1_rryok"]
 [ext_resource type="Script" uid="uid://dafgncpxeumb7" path="res://universal_scenes/timer.gd" id="2_7vfb3"]
 [ext_resource type="Texture2D" uid="uid://cix8xsq53oky6" path="res://universal_scenes/timer_assets/shadow/shadow.png" id="2_b6dwy"]
 [ext_resource type="Texture2D" uid="uid://dwa2pqrwl2d2c" path="res://universal_scenes/timer_assets/shadow/shadow2.png" id="3_vvgd1"]
@@ -523,7 +524,15 @@ _data = {
 &"timer_animation": SubResource("Animation_80uw8")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_rryok"]
+font_size = 72
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=822918922]
+process_mode = 3
+script = ExtResource("1_rryok")
 
 [node name="instructions" type="RichTextLabel" parent="." unique_id=616971023]
 modulate = Color(1, 1, 1, 0)
@@ -606,3 +615,26 @@ frame = 1
 
 [node name="timer_animation" type="AnimationPlayer" parent="." unique_id=1169583010]
 libraries/ = SubResource("AnimationLibrary_ccved")
+
+[node name="PauseMenu" type="Node2D" parent="." unique_id=890866907]
+visible = false
+position = Vector2(500, 0)
+
+[node name="PauseMenuText" type="Label" parent="PauseMenu" unique_id=2046262302]
+process_mode = 2
+z_index = 3
+offset_right = 816.0
+offset_bottom = 175.0
+text = "PAUSED
+Press \"ESC\" to unpause"
+label_settings = SubResource("LabelSettings_rryok")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=684246921]
+process_mode = 2
+offset_left = -660.0
+offset_top = -153.0
+offset_right = 1615.0
+offset_bottom = 1179.0
+mouse_filter = 2
+color = Color(0.27752772, 0.27752772, 0.27752772, 0.75686276)

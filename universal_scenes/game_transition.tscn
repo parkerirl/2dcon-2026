@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ps37wbx8wi6w" path="res://universal_scenes/transition_assets/laptop.png" id="1_3d3ve"]
 [ext_resource type="Script" uid="uid://b2b860gefayx2" path="res://universal_scenes/game_transitions.gd" id="1_5duto"]
-[ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/1_no_laughing/1_no_laughing.tscn" id="2_curyv"]
-[ext_resource type="PackedScene" uid="uid://boaew6l3t4pjc" path="res://stage1/2_spam/2_spam.tscn" id="3_curyv"]
+[ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/5_ratio/5_ratio.tscn" id="2_curyv"]
+[ext_resource type="PackedScene" uid="uid://boaew6l3t4pjc" path="res://stage1/4_scroll/6_close.tscn" id="3_curyv"]
 [ext_resource type="Texture2D" uid="uid://b7i7m5g31k213" path="res://universal_scenes/transition_assets/star_background/frame_0_delay-0.09s.jpg" id="4_us5jb"]
 [ext_resource type="Texture2D" uid="uid://bkoxxqsw3byhw" path="res://universal_scenes/transition_assets/handRight_1.png" id="5_curyv"]
 [ext_resource type="Texture2D" uid="uid://t6ke3j5mhnbr" path="res://universal_scenes/transition_assets/star_background/frame_1_delay-0.09s.jpg" id="5_fmucu"]
