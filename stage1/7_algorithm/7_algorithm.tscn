@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://xfg26gqnvpwk"]
+
+[ext_resource type="Script" uid="uid://ftn0mrqb2ywn" path="res://stage1/7_algorithm/7_algorithm.gd" id="1_6ur8h"]
+[ext_resource type="Texture2D" uid="uid://bs037ej3v881d" path="res://stage1/7_algorithm/bg.png" id="2_6ur8h"]
+
+[node name="Main" type="Node2D" unique_id=671729599]
+script = ExtResource("1_6ur8h")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1874173048]
+z_index = -2
+position = Vector2(961, 548.5)
+scale = Vector2(2.0083337, 2.1240742)
+texture = ExtResource("2_6ur8h")

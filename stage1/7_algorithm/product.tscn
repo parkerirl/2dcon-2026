@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cohs4ivc8xmt6"]
+
+[ext_resource type="Script" uid="uid://cp5ubbl6rx6sa" path="res://stage1/7_algorithm/product.gd" id="1_k84mx"]
+[ext_resource type="Texture2D" uid="uid://c45mgo3tf812w" path="res://stage1/6_close/xmark-solid.png" id="2_tf7lv"]
+[ext_resource type="Script" uid="uid://d01wc7g0ce7hd" path="res://stage1/7_algorithm/select_product.gd" id="3_togfj"]
+[ext_resource type="Texture2D" uid="uid://dt2a5vjbwqrfm" path="res://stage1/7_algorithm/imgs1/good1.png" id="4_k84mx"]
+
+[node name="Product" type="Node2D" unique_id=1840559964]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_k84mx")
+
+[node name="ChooseProd" type="TextureButton" parent="." unique_id=496452422]
+z_index = 1
+offset_left = 300.0
+offset_top = -300.0
+offset_right = 940.0
+offset_bottom = 340.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_tf7lv")
+script = ExtResource("3_togfj")
+
+[node name="ProdImg" type="Sprite2D" parent="." unique_id=2024608283]
+scale = Vector2(5, 5)
+texture = ExtResource("4_k84mx")
+
+[connection signal="button_down" from="ChooseProd" to="ChooseProd" method="_on_button_down"]
