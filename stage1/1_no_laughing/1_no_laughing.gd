@@ -4,6 +4,9 @@ var lastBeat: int = -1
 var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_laugh")
 @export var gameLengthBeats: int = 16
+var gameTimer: Node = UI.get_node("timer")
+var timerAnimation: Node = UI.get_node("timer_animation")
+var timerAnimationFrame: float = 1.0
 
 @export var instructions: String = "No laughing!"
 @export var videos: Array[AnimatedSprite2D]
@@ -26,6 +29,9 @@ func _ready() -> void:
 	Engine.time_scale = Global.gameTimeScaleFactor
 	gameAudio.pitch_scale = Global.gameTimeScaleFactor
 	gameAudio.play()
+	
+	timerAnimation.seek(1.0, true)
+	timerAnimationFrame = 1.0
 	
 	for sprite in videos:
 		sprite.visible = false
@@ -66,7 +72,27 @@ func _process(_delta: float) -> void:
 	var currentBeat = floori(time * (Global.bpm / 60.0))
 	if currentBeat != lastBeat:
 		lastBeat = currentBeat
+		
+		timerAnimation.seek(timerAnimationFrame, true)
+		
+		if gameLengthBeats == 8:
+			timerAnimation.play("timer_animation")
+			var timerTween = create_tween().set_parallel(true)
+			timerTween.tween_property(gameTimer, "modulate:a", 1.0, 0.5) \
+				.set_trans(timerTween.TRANS_SINE).set_ease(timerTween.EASE_OUT)
+		elif gameLengthBeats == 16:
+			if currentBeat == 8:
+				timerAnimation.play("timer_animation")
+				var timerTween = create_tween().set_parallel(true)
+				timerTween.tween_property(gameTimer, "modulate:a", 1.0, 0.5) \
+					.set_trans(timerTween.TRANS_SINE).set_ease(timerTween.EASE_OUT)
+		
+		timerAnimationFrame += 1
+		
 		if lastBeat >= gameLengthBeats:
+			gameTimer.modulate.a = 0.0
+			timerAnimation.stop()
+			timerAnimation.seek(1.0, true)
 			TransitionBack()
 	
 	guy.play(guyAnim[guyState])

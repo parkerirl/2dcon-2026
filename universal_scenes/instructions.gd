@@ -6,6 +6,8 @@ var gameAudio
 var gameLengthBeats: int = 8
 
 func _ready() -> void:
+	scale = Vector2(3.0, 3.0)
+	
 	if Global.gameWon == 0:
 		gameAudio = AudioManager.get_node("earlyFailTransition")
 	elif Global.gameWon == 1:
@@ -30,6 +32,7 @@ func Hide() -> void:
 	var displayInstructionsTween = create_tween().set_parallel(true)
 	displayInstructionsTween.tween_property(self, "modulate:a", 0.0, 0.5) \
 		.set_trans(displayInstructionsTween.TRANS_SINE).set_ease(displayInstructionsTween.EASE_OUT)
+	scale = Vector2(3.0, 3.0)
 
 func _physics_process(_delta: float) -> void:
 	if Global.gameWon == 0:

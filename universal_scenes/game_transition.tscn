@@ -2,13 +2,46 @@
 
 [ext_resource type="Texture2D" uid="uid://ps37wbx8wi6w" path="res://universal_scenes/transition_assets/laptop.png" id="1_3d3ve"]
 [ext_resource type="Script" uid="uid://b2b860gefayx2" path="res://universal_scenes/game_transitions.gd" id="1_5duto"]
-[ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/1_no_laughing/1_no_laughing.tscn" id="2_tlq4w"]
+[ext_resource type="PackedScene" uid="uid://b778acgd6o1cj" path="res://stage1/1_no_laughing/1_no_laughing.tscn" id="2_curyv"]
+[ext_resource type="PackedScene" uid="uid://boaew6l3t4pjc" path="res://stage1/2_spam/2_spam.tscn" id="3_curyv"]
+[ext_resource type="Texture2D" uid="uid://b7i7m5g31k213" path="res://universal_scenes/transition_assets/star_background/frame_0_delay-0.09s.jpg" id="4_us5jb"]
 [ext_resource type="Texture2D" uid="uid://bkoxxqsw3byhw" path="res://universal_scenes/transition_assets/handRight_1.png" id="5_curyv"]
+[ext_resource type="Texture2D" uid="uid://t6ke3j5mhnbr" path="res://universal_scenes/transition_assets/star_background/frame_1_delay-0.09s.jpg" id="5_fmucu"]
 [ext_resource type="Texture2D" uid="uid://cna6fuijdrd17" path="res://universal_scenes/transition_assets/handRight_2.png" id="6_kikrh"]
+[ext_resource type="Texture2D" uid="uid://dal3lphxu83q6" path="res://universal_scenes/transition_assets/star_background/frame_2_delay-0.09s.jpg" id="6_yxtgh"]
 [ext_resource type="Texture2D" uid="uid://dwt2rmvvhnhr1" path="res://universal_scenes/transition_assets/handRight_3.png" id="7_4b7a6"]
+[ext_resource type="Texture2D" uid="uid://ydxobbcq3l16" path="res://universal_scenes/transition_assets/star_background/frame_3_delay-0.09s.jpg" id="7_e1iyn"]
 [ext_resource type="Texture2D" uid="uid://c47ymvdubem32" path="res://universal_scenes/transition_assets/handLeft_1.png" id="8_4df2e"]
+[ext_resource type="Texture2D" uid="uid://drr0aclud3ox0" path="res://universal_scenes/transition_assets/star_background/frame_4_delay-0.09s.jpg" id="8_jufxm"]
+[ext_resource type="Texture2D" uid="uid://djt4gdotna0rl" path="res://universal_scenes/transition_assets/star_background/frame_5_delay-0.09s.jpg" id="9_ln7ca"]
 [ext_resource type="Texture2D" uid="uid://bxm5w4oxn10sp" path="res://universal_scenes/transition_assets/handLeft_2.png" id="9_pqmyu"]
 [ext_resource type="Texture2D" uid="uid://p1d1ijhq1nqs" path="res://universal_scenes/transition_assets/handLeft_3.png" id="10_5g5f4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ogjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_us5jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fmucu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yxtgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e1iyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jufxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ln7ca")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dcgyd"]
 animations = [{
@@ -52,7 +85,13 @@ animations = [{
 
 [node name="GameTransitionEarlynet" type="Node2D" unique_id=2053328765]
 script = ExtResource("1_5duto")
-stage1Games = Array[PackedScene]([ExtResource("2_tlq4w")])
+stage1Games = Array[PackedScene]([ExtResource("2_curyv"), ExtResource("3_curyv")])
+
+[node name="background" type="AnimatedSprite2D" parent="." unique_id=258034708]
+position = Vector2(137, 99)
+sprite_frames = SubResource("SpriteFrames_2ogjf")
+autoplay = "default"
+frame_progress = 0.6048399
 
 [node name="laptop" type="Sprite2D" parent="." unique_id=422095207]
 texture = ExtResource("1_3d3ve")
