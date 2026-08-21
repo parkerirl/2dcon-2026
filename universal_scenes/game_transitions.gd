@@ -50,7 +50,7 @@ func _ready() -> void:
 	gameAudio.play()
 	
 	frameDuration = 60 / Global.bpm
-	spritesToTween = $animatedSprites.get_children()
+	spritesToTween = $layout/animatedSprites.get_children()
 	
 	PrepareMicrogame()
 	
