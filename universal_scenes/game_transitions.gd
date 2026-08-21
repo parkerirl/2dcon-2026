@@ -42,6 +42,10 @@ func _ready() -> void:
 		gameAudio = AudioManager.get_node("earlySuccessTransition")
 	else:
 		gameAudio = AudioManager.get_node("earlyTransition")
+	if Global.streak == 10:
+		gameAudio = AudioManager.get_node("speedupTransition")
+		Global.gameTimeScaleFactor = Global.gameTimeScaleFactor * 1.1
+		Global.streak = 0
 	
 	#NOTES: Engine.time_scale speeds up everything evenly but audio,
 	#audio runs on its own server and must be controlled with pitch_scale.
@@ -53,6 +57,7 @@ func _ready() -> void:
 	spritesToTween = $layout/animatedSprites.get_children()
 	
 	PrepareMicrogame()
+	Global.streak += 1
 	
 	#Set sprite fps to length of a single beat of the current bpm
 	for sprite in spritesToTween:

@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://drun1rmlwr6co" path="res://audio/level3/modern_doomscroll.ogg" id="14_6flc8"]
 [ext_resource type="AudioStream" uid="uid://6sp3ygvhfelr" path="res://audio/level1/early_read.ogg" id="15_j2jck"]
 [ext_resource type="AudioStream" uid="uid://de6gxxjb0weqo" path="res://audio/generic/beep.ogg" id="16_41wxr"]
+[ext_resource type="AudioStream" uid="uid://poilm62einfa" path="res://audio/level1/early_speedup.ogg" id="17_pdoh7"]
 
 [node name="AudioManager" type="Node" unique_id=518492664]
 
@@ -67,3 +68,6 @@ stream = ExtResource("15_j2jck")
 [node name="sfx_beep" type="AudioStreamPlayer2D" parent="." unique_id=1635704824]
 stream = ExtResource("16_41wxr")
 pitch_scale = 2.0
+
+[node name="speedupTransition" type="AudioStreamPlayer2D" parent="." unique_id=1999477243]
+stream = ExtResource("17_pdoh7")
