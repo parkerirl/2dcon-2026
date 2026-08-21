@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://biawyilokbims" path="res://audio/788933__mediasaur__mouse_click_1.wav" id="12_1ruox"]
 [ext_resource type="AudioStream" uid="uid://wjioh2xhnusy" path="res://audio/level3/modern_optout.ogg" id="13_3tecn"]
 [ext_resource type="AudioStream" uid="uid://drun1rmlwr6co" path="res://audio/level3/modern_doomscroll.ogg" id="14_6flc8"]
+[ext_resource type="AudioStream" uid="uid://6sp3ygvhfelr" path="res://audio/level1/early_read.ogg" id="15_j2jck"]
 
 [node name="AudioManager" type="Node" unique_id=518492664]
 
@@ -58,3 +59,6 @@ stream = ExtResource("13_3tecn")
 
 [node name="level1_close" type="AudioStreamPlayer2D" parent="." unique_id=611055123]
 stream = ExtResource("14_6flc8")
+
+[node name="level1_algorithm" type="AudioStreamPlayer2D" parent="." unique_id=1723140499]
+stream = ExtResource("15_j2jck")
