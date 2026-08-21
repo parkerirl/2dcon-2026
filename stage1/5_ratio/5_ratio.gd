@@ -3,9 +3,11 @@ extends Node2D
 var lastBeat: int = -1
 var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_ratio")
-var gameLengthBeats: int= 8
+var gameLengthBeats: int = 8
+var gameTimer: Node = UI.get_node("timer")
 
 @export var instructions: String = "Balance to zero!"
+@export var currentBeat: int = 1
 
 #@export var player: Sprite2D
 
@@ -72,11 +74,19 @@ func _process(_delta: float) -> void:
 		Global.gameWon = 0
 	
 	var time = gameAudio.get_playback_position() + AudioServer.get_time_to_next_mix() - AudioServer.get_output_latency()
-	var currentBeat = floori(time * (Global.bpm / 60.0))
+	currentBeat = floori(time * (Global.bpm / 60.0))
 	if currentBeat != lastBeat:
 		lastBeat = currentBeat
+		
+		if gameLengthBeats == 8:
+			gameTimer.visible = true
+		elif gameLengthBeats == 16:
+			if currentBeat == 8:
+				gameTimer.visible = true
+			
 		if lastBeat >= gameLengthBeats:
 			TransitionBack()
+			gameTimer.visible = false
 
 
 func _on_upvote_button_down() -> void:

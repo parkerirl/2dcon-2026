@@ -5,6 +5,7 @@ var spritesToTween: Array[Node]
 var frameDuration: float = 0.0
 var instructionText = UI.get_node("instructions")
 @export var stage1Games: Array[PackedScene] = []
+var lastPick = null
 
 var gameAudio = AudioManager.get_node("earlyTransition")
 
@@ -15,7 +16,12 @@ var temp
 var gameInstructions
 
 func PrepareMicrogame() -> void:
-	nextGame = stage1Games.pick_random()
+	var gamePool = stage1Games.duplicate()
+	if lastPick != null and gamePool.size() > 1:
+		gamePool.erase(lastPick)
+	nextGame = gamePool.pick_random()
+	lastPick = nextGame
+	
 	temp = nextGame.instantiate()
 	gameInstructions = temp.instructions
 	instructionText.clear()
@@ -25,9 +31,6 @@ func PrepareMicrogame() -> void:
 func MicrogameTransition() -> void:
 	temp.queue_free()
 	get_tree().change_scene_to_packed(nextGame)
-	
-	#get gamewon boolean, if won, play win state, then play normal transition
-	#if lost, remove 1 life, play lose state, then play normal transition
 
 func _ready() -> void:
 		

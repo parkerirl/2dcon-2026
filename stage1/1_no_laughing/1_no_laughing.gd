@@ -3,7 +3,7 @@ extends Node2D
 var lastBeat: int = -1
 var frameDuration: float = 60 / Global.bpm
 var gameAudio: Node = AudioManager.get_node("level1_laugh")
-var gameLengthBeats: int = 16
+@export var gameLengthBeats: int = 16
 
 @export var instructions: String = "No laughing!"
 @export var videos: Array[AnimatedSprite2D]
