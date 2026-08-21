@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cohs4ivc8xmt6"]
+
+[ext_resource type="Script" uid="uid://dhg6cgl7h7h1" path="res://stage1/6_close/ad.gd" id="1_tf7lv"]
+[ext_resource type="Texture2D" uid="uid://c45mgo3tf812w" path="res://stage1/6_close/xmark-solid.png" id="2_tf7lv"]
+[ext_resource type="Script" uid="uid://dk2vrj3gdolhd" path="res://stage1/6_close/delete_ad.gd" id="3_tf7lv"]
+[ext_resource type="Texture2D" uid="uid://xxhvnvr0gr53" path="res://stage1/6_close/ad.png" id="6_0tc1h"]
+
+[node name="Ad" type="Node2D" unique_id=1840559964]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_tf7lv")
+
+[node name="DeleteAd" type="TextureButton" parent="." unique_id=496452422]
+z_index = 1
+offset_left = 300.0
+offset_top = -300.0
+offset_right = 940.0
+offset_bottom = 340.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_tf7lv")
+script = ExtResource("3_tf7lv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2024608283]
+texture = ExtResource("6_0tc1h")
+
+[connection signal="button_down" from="DeleteAd" to="DeleteAd" method="_on_button_down"]

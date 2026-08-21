@@ -15,13 +15,17 @@ var questions = [
 	"Q: How can I fix my marriage?",
 	"Q: HELP! Minecraft is SUPER LAGGY!!!?",
 	"Q: need advice - my AI art looks bad???",
-	"Q: How can I make a game in Godot?"
+	"Q: How can I make a game in Godot?",
+	"Q: Why is my code broken?"
 ]
 var answers = [
 	"A: Stop spending all ur $$$ on video games and get a JOB!!!!",
 	"A: You need to download more dedicated RAM.",
 	"A: Just give up, it worked for me",
-	"A: I have no idea"
+	"A: I have no idea",
+	"A: I don't know anything about that but you should try using Linux",
+	"A: sorry I'm not reading all that",
+	"A: can't you just google it???"
 ]
 	
 
